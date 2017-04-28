@@ -1,12 +1,30 @@
 // JavaScript File
-var str , fan , result;
+
 function myFun(...args) {
-	for (var i=0; i<arguments.length-1 ;i++){
-		str =arguments[i]; fan = arguments[arguments.length];
-		result = fan(str);
-	}
-	return console.log (result);
+    var posl = arguments.length-1,
+    fan = arguments[posl],
+    result = [];
+    for (var i=0; i<posl ;i++){
+        result[i]= fan (args[i]);
+
+    }
+    return result;
 }
-myFun('abc','ert','rty',function(str){
-	return str.toUpperCase();
-})
+var finish ;
+
+finihs = myFun('abc','ert','rty', 'bar' ,function(str){
+    return str.toUpperCase();
+});
+console.log (finihs);
+
+
+function myFun(...args) {
+    var posl = arguments.length-1,
+    fan = arguments[posl],
+    result = [];
+    for (var i=0; i<posl ;i++){
+        result[i]= fan (args[i]);
+
+    }
+    return result;
+}
